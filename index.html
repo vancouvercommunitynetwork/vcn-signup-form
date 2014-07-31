@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<style type="text/css">
+input.error, select.error, textarea.error {
+border: 1px red dotted;
+
+}
+
+	label.error {
+		color: #F00;
+		font-family: sans-serif;
+		font-size: .8em;
+		 -webkit-animation: fadein 2s; /* Safari and Chrome */
+       -moz-animation: fadein 2s; /* Firefox */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}​
+
+/* Opera */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}​
+	}
+
+
+</style>
+<title>validation </title>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script
+src="js/jquery.validate.min.js"></script>
+<script
+src="js/additional-methods.min.js"></script>
+<script src="js/script.js"></script>
+</head>
+<body>
+<form  method="post" id="signup">
+<b>Legal First and Last Name*</b>:<br />
+<input type="text" name="names" size="25" class="required"/><br/><br />
+<b>Phone Number (Day)*</b>:<br />
+<input type="text"  name="phone1" size="25" class="required digits" /><br/></p>
+<b>login*</b>:<br />
+<input type="text"  name="login" size="25" class="required"/><br/></p>
+<p><b>password*</b>:<br />
+<input type="password" name="password" size="8" class="required" id="password"/><br/>
+<p><b>password*</b>:<br />
+<input type="password" name="confirm_password" size="8" class="required" id="confirm_password" /><br/></p>
+<p><b>Birthdate (mm/dd/yy)*</b>:<br />
+<input type="text" name="birth_contact" size="8" class="validDate"/><br/><br />
+<b>Current email address, mothers maiden name, or another keyword*</b>:<br />
+<input type="text" maxlength="30" name="keyword" size="30" class="required" /><br/></p>
+<b>Address Line 1*</b>:<br />
+<input type="text" maxlength="40" name="address1" size="25" class="required" /><br/><br />
+<b>Address Line 2</b>:<br />
+<input type="text" maxlength="40" name="address2" size="25" /><br/><br />
+<b>City*</b>:<br />
+<input type="text" maxlength="25" name="city" size="25"  value="Vancouver" class="required" /><br/><br />
+<b>Province*</b>:<br />
+<input type="text" maxlength="25" name="province" size="25" value="British Columbia" class="required" /><br/><br />
+<b>Postal Code</b>:<br />
+<input type="text" maxlength="25" name="postalcode" size="5" class="required"/><br/><br />
+<b>Country*</b>:<br />
+<input type="text" maxlength="25" name="country" size="25" value="Canada" class="required"/><br/><br />
+</div>
+<input type="submit" value="Submit" /><br />
+<input type="reset" value="Clear Form" id="reset" /></p>
+
+</form>
+
+</body>
+
+</html>
