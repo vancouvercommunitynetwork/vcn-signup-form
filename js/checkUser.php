@@ -5,17 +5,17 @@
 </head>
 <body>
 <?php
-	$logname = $_REQUEST["login"];
-	if ($logname== "Ali")
-	{
-		echo "true";
-		return true;
-	}
-	else
-	{
-		echo "false";
-		return false;
-	}
+$a=array("login"=>"","ali"=>"");
+if (array_key_exists("login",$a))
+   {
+    echo "false";
+   }
+else
+   {
+  
+   echo "true";
+   }
+
 ?>
 </body>
 </html>
