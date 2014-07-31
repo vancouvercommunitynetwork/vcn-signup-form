@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php
-$a=array("login"=>"","ali"=>"");
+$a=array("login"=>"");
 if (array_key_exists("login",$a))
    {
     echo "false";
