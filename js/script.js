@@ -8,7 +8,7 @@ $(document).ready(function(){
 		rules : {
 			names:{required:true,maxlength:35},
 			phone1:{required:true,phoneUS:true},
-			login:{required:true,remote:"checkUser.php"},
+			login:{required:true,remote:"js/checkUser.php"},
 			password:{required:true,rangelength:[6,8]},
 			confirm_password:{equalTo:'#password'},
 			birth_contact:{validDate:true},
