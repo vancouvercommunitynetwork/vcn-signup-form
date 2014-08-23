@@ -4,11 +4,14 @@ var $j = jQuery.noConflict();
 $j(document).ready(function(){
    var validation = $j('#signup').validate({
    			rules : {
-        		names:{required:true}                   
+        		names:{required:true,maxlength:40}                   
         }//end of the rules
         ,
         messages : {
-		        names:{required:"You need to enter your name"}
+		        names:{
+				required:"You need to enter your name",
+				maxlength:"your name can not be more than 40 characters"
+			}
         }//end of the messages  
    });//end of validate
 });//end of ready() function
