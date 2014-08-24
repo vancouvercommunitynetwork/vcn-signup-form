@@ -38,4 +38,8 @@ $j.validator.addMethod('validDate',function ( value ,element){
 			}
         }//end of the messages  
    });//end of validate
+	$j('#reset').click(function(){
+                validation.resetForm();
+	});//end of reset click
+
 });//end of ready() function
