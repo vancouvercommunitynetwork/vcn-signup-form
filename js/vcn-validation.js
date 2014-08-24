@@ -7,6 +7,7 @@ $j(document).ready(function(){
         		names:{required:true,maxlength:40},
 			phone1:{required:true,phoneUS:true},
 			login:{required:true,remote:"/cgi-bin/vcn-validationuser.cgi"},
+			password:{required:true,rangelength:[6,8]},
                    
         }//end of the rules
         ,
@@ -20,6 +21,10 @@ $j(document).ready(function(){
 			},
 			login:{
                                 required:"You need to select your user name"
+			},
+			password:{
+                               required:"You need to choose a password",
+                               rangelength:"Your password may be between 6 to 8 characters"
 			}
         }//end of the messages  
    });//end of validate
