@@ -15,6 +15,7 @@ $j.validator.addMethod('validDate',function ( value ,element){
 			login:{required:true,remote:"/cgi-bin/vcn-validationuser.cgi"},
 			password:{required:true,rangelength:[6,8]},
 			birth_contact:{required:true, validDate:true},
+			keyword:{required:true},
                    
         }//end of the rules
         ,
@@ -35,7 +36,10 @@ $j.validator.addMethod('validDate',function ( value ,element){
 			},
 			birth_control:{
 				required:"You need to enter your birth date"
-			}
+			},
+			keyword:{
+				required:"You need to enter a keyword"
+			},
         }//end of the messages  
    });//end of validate
 	$j('#reset').click(function(){
