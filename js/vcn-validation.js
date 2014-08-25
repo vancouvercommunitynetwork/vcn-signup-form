@@ -16,6 +16,10 @@ $j.validator.addMethod('validDate',function ( value ,element){
 			password:{required:true,rangelength:[6,8]},
 			birth_contact:{required:true, validDate:true},
 			keyword:{required:true},
+			address1:{required:true},
+			city:{required:true},
+			province:{required:true},
+			postalcode:{required:true}
                    
         }//end of the rules
         ,
