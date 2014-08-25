@@ -7,7 +7,9 @@ $j.validator.addMethod('validDate',function ( value ,element){
                 return (this.optional(element)|| /^(0?[1-9]|1[012])\/(0?[1-9]|[12][0-9]|3[01])\/((19|20)\d\d)$/.test(value) );
         },"Please enter your birthday in format MM\/DD\/YYYY");
 
-
+$j.validator.addMethod('validZip',function(value,element){
+		return (this.optional(element) || /^[ABCEGHJKLMNPRSTVXYabcedhjklmnprstvxy]{1}\d{1}[A-z]{1} *\d{1}[A-z]{1}\d{1}$/.test(value));
+},"Please enter a valid postal code");
    var validation = $j('#signup').validate({
    			rules : {
         		names:{required:true,maxlength:40},
@@ -19,7 +21,7 @@ $j.validator.addMethod('validDate',function ( value ,element){
 			address1:{required:true},
 			city:{required:true},
 			province:{required:true},
-			postalcode:{required:true}
+			postalcode:{required:true,validZip:true }
                    
         }//end of the rules
         ,
