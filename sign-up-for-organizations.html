@@ -1,5 +1,12 @@
+<head>
+<link rel="stylesheet" href="vcn-validation-style.css" type="text/css" charset="utf-8">
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/additional-methods.js"></script>
+<script src="js/vcn-validation.js"></script>
+</head>
 <h2>Organization Information</h2>
-<form action="//www.vcn.bc.ca/cgi-bin/user-data/reg-org.cgi" method="post">
+<form action="//www.vcn.bc.ca/cgi-bin/user-data/reg-org.cgi" method="post" id="signup" >
 <b>Organization Name</b>:*
 <input type="text" maxlength="25" name="names" size="25" />
 <b>Address Line 1*</b>:
@@ -44,7 +51,7 @@ It is a good idea, for security reasons, to change your password regularly. But,
 By submitting your registration information, you indicate that you have read and understood the VCN <a href="/user-agreement/">User Agreement</a> and accept its terms for use of VCN. You also agree to receive occasional messages about your account and VCN.
 
 <input type="submit" value="Submit" />
-<input type="reset" value="Clear Form" />
+<input type="reset" value="Clear Form" id="reset" />
 
 The above information is for our records only. It will not be given out for any reason. Please read our <a href="/policy/">VCN Privacy Policy</a>
 

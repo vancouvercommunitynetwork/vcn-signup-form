@@ -10,9 +10,14 @@ $j.validator.addMethod('validDate',function ( value ,element){
 $j.validator.addMethod('validZip',function(value,element){
 		return (this.optional(element) || /^[ABCEGHJKLMNPRSTVXYabcedhjklmnprstvxy]{1}\d{1}[A-z]{1} *\d{1}[A-z]{1}\d{1}$/.test(value));
 },"Please enter a valid postal code");
+
+$j.validator.addMethod('validFullname',function(value,element){
+		return (this.optional(element)||/^[A-z0-9\s\(\)\'\#\.\,\-\/\\]+\s([A-z0-9\(\)\'\#\.\,\-\/\\]+)$/.test(value));
+},"Please enter your first and last name");
+
    var validation = $j('#signup').validate({
    			rules : {
-        		names:{required:true,maxlength:40},
+        		names:{required:true,validFullname:true ,maxlength:40},
 			phone1:{required:true,phoneUS:true},
 			login:{required:true,remote:"/cgi-bin/vcn-validationuser.cgi"},
 			password:{required:true,rangelength:[6,8]},
@@ -21,8 +26,10 @@ $j.validator.addMethod('validZip',function(value,element){
 			address1:{required:true},
 			city:{required:true},
 			province:{required:true},
-			postalcode:{required:true,validZip:true }
-                   
+			postalcode:{required:true,validZip:true},
+			country:{required:true},			
+                  	phone2:{phoneUS:true},
+			fax:{phoneUS:true} 
         }//end of the rules
         ,
         messages : {
