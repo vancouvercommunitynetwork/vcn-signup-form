@@ -28,7 +28,8 @@ $j.validator.addMethod('validFullname',function(value,element){
 			province:{required:true},
 			postalcode:{required:true,validZip:true},
 			country:{required:true},			
-                   
+                  	phone2:{phoneUS:true},
+			fax:{phoneUS:true} 
         }//end of the rules
         ,
         messages : {
