@@ -26,7 +26,8 @@ $j.validator.addMethod('validFullname',function(value,element){
 			address1:{required:true},
 			city:{required:true},
 			province:{required:true},
-			postalcode:{required:true,validZip:true }
+			postalcode:{required:true,validZip:true},
+			country:{required:true},			
                    
         }//end of the rules
         ,
