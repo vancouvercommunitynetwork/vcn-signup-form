@@ -17,7 +17,7 @@ $j.validator.addMethod('validFullname',function(value,element){
 
    var validation = $j('#signup').validate({
    			rules : {
-        		names:{required:true,validFullname:true ,maxlength:40},
+        	names:{required:true,validFullname:true ,maxlength:40},
 			phone1:{required:true,phoneUS:true},
 			login:{required:true,remote:"/cgi-bin/vcn-validationuser.cgi"},
 			password:{required:true,rangelength:[6,8]},
@@ -28,22 +28,20 @@ $j.validator.addMethod('validFullname',function(value,element){
 			province:{required:true},
 			postalcode:{required:true,validZip:true},
 			country:{required:true},			
-                  	phone2:{phoneUS:true},
-			fax:{phoneUS:true} 
         }//end of the rules
         ,
         messages : {
 		        names:{
 				required:"You need to enter your name",
 				maxlength:"your name can not be more than 40 characters"
-			},
-			phone1:{
-				required:"you need to enter your phone number"
-			},
-			login:{
-                                required:"You need to select your user name"
-			},
-			password:{
+				},
+				phone1:{
+					required:"you need to enter your phone number"
+				},
+				login:{
+                    required:"You need to select your user name"
+				},
+				password:{
                                required:"You need to choose a password",
                                rangelength:"Your password may be between 6 to 8 characters"
 			},
@@ -53,6 +51,21 @@ $j.validator.addMethod('validFullname',function(value,element){
 			keyword:{
 				required:"You need to enter a keyword"
 			},
+			address1:{
+				required:"You need to enter your address"
+			},
+			city:{
+				required:"You need to enter the name of your city"
+			},
+			province:{
+				required:"You need to enter the name of your province"
+			},
+			postalcode:{
+				required:"You need to enter your postal code"
+			},
+			country:{
+				required:"You should enter the anme of your countery"
+			}
         }//end of the messages  
    });//end of validate
 	$j('#reset').click(function(){
