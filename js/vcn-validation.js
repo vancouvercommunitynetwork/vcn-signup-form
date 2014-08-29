@@ -47,7 +47,7 @@ $j.validator.addMethod('validFullname',function(value,element){
                                required:"You need to choose a password",
                                rangelength:"Your password may be between 6 to 8 characters"
 			},
-			birth_control:{
+			birth_contact:{
 				required:"You need to enter your birth date"
 			},
 			keyword:{
