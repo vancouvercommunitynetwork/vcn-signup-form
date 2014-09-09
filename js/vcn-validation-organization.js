@@ -8,11 +8,11 @@ $j.validator.addMethod('validZip',function(value,element){
 },"Please enter a valid postal code");
 
 $j.validator.addMethod('validContact',function(value,element){
-	return (this.optional(element)||/^[A-z0-9\s\(\)\'\#\.\,\-\/\\]+\s([A-z0-9\(\)\'\#\.\,\-\/\\]+)$/.test(value));},"Please enter a valid contact name");
+	return (this.optional(element)||/^[A-z0-9\s\(\)\'\#\.\,\-\/\\]+\s([A-z0-9\(\)\'\#\.\,\-\/\\]+)$/.test(value));},"Please enter a valid name");
  
    var validation = $j('#signup').validate({
    			rules : {
-        	names:{required:true,maxlength:40},
+        	names:{required:true,maxlength:40,validContact:true},
 			phone1:{required:true,phoneUS:true},
 			login:{required:true,remote:"/cgi-bin/vcn-validationuser.cgi"},
 			password:{required:true,rangelength:[6,8]},
