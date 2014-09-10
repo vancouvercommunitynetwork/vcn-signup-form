@@ -2,6 +2,9 @@ var $j = jQuery.noConflict();
 // $j is now an alias to the jQuery function; creating the new alias is optional.
 
 $j(document).ready(function(){
+$j.validator.addMethod('validPass',function ( value ,element){
+                 return (this.optional(element)||/^(?=.*[0-9])(?=.*[A-z])([A-z0-9\(\)\ \'\#\.\,\-\/\\]){6,8}$/.test(value) );
+},"Please enter a password whit at least one letter and one digit. You can use these characters in your password as well \(\)\'\#\.\,\-\/ \\ and space");
 
 $j.validator.addMethod('validDate',function ( value ,element){
                 return (this.optional(element)|| /^(0?[1-9]|1[012])\/(0?[1-9]|[12][0-9]|3[01])\/((19|20)\d\d)$/.test(value) );
@@ -24,7 +27,7 @@ $j.validator.addMethod('validUser',function(value,element){
         	names:{required:true,validFullname:true ,maxlength:40},
 			phone1:{required:true,phoneUS:true},
 			login:{required:true,validUser:true,remote:"/cgi-bin/vcn-validationuser.cgi"},
-			password:{required:true,rangelength:[6,8]},
+			password:{required:true,rangelength:[6,8],validPass:true},
 			birth_contact:{required:true, validDate:true},
 			keyword:{required:true},
 			address1:{required:true},
