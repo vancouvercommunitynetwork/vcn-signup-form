@@ -7,28 +7,28 @@
 </head>
 Please fill out the information below as accurately as possible. Account requests without a full legal name (on government-issued ID) and address will not be processed.
 
-<form action="//www.vcn.bc.ca/cgi-bin/user-data/reg-user-email.cgi" method="post" id="signup"><b>Legal First and Last Name*</b>:
-<input maxlength="40" name="names" size="25" type="text"  />
+<form action="//www.vcn.bc.ca/cgi-bin/user-data/reg-user-email.cgi" method="post" id="signup" onsubmit="return validateForm()"><b>Legal First and Last Name*</b>:
+<input maxlength="40" name="names" size="25" type="text" id="emailSignupName"/>
 
 <b>Phone Number (Day)*</b>:
-<input maxlength="25" name="phone1" size="25" type="text" />
+<input maxlength="25" name="phone1" size="25" type="text" id="emailSignupPhone"/>
 <h2>Account Information Section</h2>
 Enter a login id between 3 and 8 characters long. The first character must be a letter but the rest may be either letters or numbers. No UPPER CASE letters or punctuation is allowed. Remember, your login id is the first part of your e-mail address so make sure you choose wisely. (ie. login@vcn.bc.ca).
 <b>login*</b>:
-<input maxlength="8" name="login" size="8" type="text"  />
+<input maxlength="8" name="login" size="8" type="text" id="emailSignupLoginId"/>
 
 Choose a password between 6 and 8 characters long. It must have at least one letter and one number. Remember passwords are CASE SENSITIVE, so if you enter your password in UPPER CASE letters you must also enter UPPER CASE letters at login time.
 
 <b>password*</b>:
-<input maxlength="8" name="password" size="8" type="password" />
+<input maxlength="8" name="password" size="8" type="password" id="emailSignupPassword"/>
 <h2>Password Problem Section</h2>
 It is a good idea, for security reasons, to change your password regularly. But, if you ever forget your password, the following information will allow us to verify your identity over the phone and reset your password to the one you choose above. Your keyword should be something that you will not forget such as your mothers maiden name or birthdate.
 
 <b>Birthdate (mm/dd/yyyy)*</b>:
-<input maxlength="10" name="birth_contact" size="10" type="text"  />
+<input maxlength="10" name="birth_contact" size="10" type="text" id="emailSignupBirthdate"/>
 
 <b>Current email address, mothers maiden name, or another keyword*</b>:
-<input maxlength="30" name="keyword" size="30" type="text"  />
+<input maxlength="30" name="keyword" size="30" type="text" id="emailSignupKeyword"/>
 
 [expand title="Dial-up Internet fields"]
 These fields are optional for email service.
@@ -78,3 +78,45 @@ The above information is for our records only. It will not be given out for any 
 All the fields marked with * are considered mandatory.
 
 </form>
+
+		<!-- new script to check mandatory fields no to be left empty.--> 
+<script>
+function validateForm() {
+	//Legal First and Last Name check
+	if(isEmpty("emailSignupName", "Legal first and last name"))
+        return false;
+	
+	//Phone number empty check
+	if(isEmpty("emailSignupPhone", "Phone number"))
+        return false;
+
+	//Login check
+	if(isEmpty("emailSignupLoginId", "Login ID"))
+        return false;
+	
+	//Password check
+	if(isEmpty("emailSignupPassword", "Password"))
+        return false;
+
+	//Birthday check
+	if(isEmpty("emailSignupBirthdate", "Birthday"))
+        return false;
+
+	//'Current email, mother maiden name or other keyword' check
+	if(isEmpty("emailSignupKeyword", "Keyword"))
+        return false;
+				
+	return true;
+}	
+	
+// check a field to see if it is empty or not
+function isEmpty(fieldName, displayName) {
+	//first, get rid of unnecessary spaces, before and after text.
+	document.getElementById(fieldName).value = document.getElementById(fieldName).value.trim();			
+	if (document.getElementById(fieldName).value == "") {
+        alert("'" + displayName + "'" + "  must be filled out!");
+		return true;
+    	}
+    	return false;
+}
+</script>
