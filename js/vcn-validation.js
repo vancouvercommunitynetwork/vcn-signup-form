@@ -10,15 +10,15 @@ $j.validator.addMethod('validDate',function ( value ,element){
                 return (this.optional(element)|| /^(0?[1-9]|1[012])\/(0?[1-9]|[12][0-9]|3[01])\/((19|20)\d\d)$/.test(value) );
         },"Please enter your birthday in format MM\/DD\/YYYY");
 
-$j.validator.addMethod('validZip',function(value,element){
+$j.validator.addMethod('validZip',function (value ,element){
 		return (this.optional(element) || /^[ABCEGHJKLMNPRSTVXYabcedhjklmnprstvxy]{1}\d{1}[A-z]{1} *\d{1}[A-z]{1}\d{1}$/.test(value));
 },"Please enter a valid postal code");
 
-$j.validator.addMethod('validFullname',function(value,element){
+$j.validator.addMethod('validFullname',function (value ,element){
 		return (this.optional(element)||/^[A-z0-9\s\(\)\'\#\.\,\-\/\\]+\s([A-z0-9\(\)\'\#\.\,\-\/\\]+)$/.test(value));
 },"Please enter your first and last name");
 
-$j.validator.addMethod('validUser',function(value,element){
+$j.validator.addMethod('validUser',function (value ,element){
 		return(this.optional(element)||/^[a-z][a-z0-9]{2,7}$/.test(value));
 },"Please eneter a username started by a lowercase letter and between 3 to 8 either letters or numbers.");
 
