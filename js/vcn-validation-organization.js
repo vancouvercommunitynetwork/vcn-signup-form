@@ -12,12 +12,17 @@ $j.validator.addMethod('validZip',function(value,element){
 
 $j.validator.addMethod('validContact',function(value,element){
 	return (this.optional(element)||/^[A-z0-9\s\(\)\'\#\.\,\-\/\\]+\s([A-z0-9\(\)\'\#\.\,\-\/\\]+)$/.test(value));},"Please enter a valid name");
+
+$j.validator.addMethod('validUser',function (value ,element){
+		return(this.optional(element)||/^[a-z][a-z0-9]{2,7}$/.test(value));
+},"Please eneter a username started by a lowercase letter and between 3 to 8 either letters or numbers.");
+
  
    var validation = $j('#signup').validate({
    			rules : {
         	names:{required:true,maxlength:40,validContact:true},
 			phone1:{required:true,phoneUS:true},
-			login:{required:true,remote:"/cgi-bin/vcn-validationuser.cgi"},
+			login:{required:true,validUser:true},
 			password:{required:true,rangelength:[6,8],validPass:true},
 			birth_contact:{required:true,validContact:true},
 			keyword:{required:true},
