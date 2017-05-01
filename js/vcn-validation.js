@@ -26,7 +26,7 @@ $j.validator.addMethod('validUser',function (value ,element){
    			rules : {
         	names:{required:true,validFullname:true ,maxlength:40},
 			phone1:{required:true,phoneUS:true},
-			login:{required:true,validUser:true,remote:"/cgi-bin/vcn-validationuser.cgi"},
+			login:{required:true,validUser:true},
 			password:{required:true,rangelength:[6,8],validPass:true},
 			birth_contact:{required:true, validDate:true},
 			keyword:{required:true},
